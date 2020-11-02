@@ -55,7 +55,7 @@ import  ${package.Entity}.${table.entityName};
     </#list>
   )
   @GetMapping("/s")
-  public String ${table.name}List(HttpServletRequest request) throws Exception {
+  public String ${table.name}List(@RequestParam(name = "pageNum", defaultValue = "1") int pageNum,@RequestParam(name = "pageSize", defaultValue = "20") int pageSize) throws Exception {
 
   Collection<${table.entityName}> ${table.name}List = ${(table.serviceName?substring(1))?uncap_first}.listByMap(map);
   return null;
